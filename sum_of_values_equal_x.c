@@ -11,11 +11,21 @@ int main()
     int x;
     scanf("%d", &x);
 
+    int flag = 0;
     for (int i = 0; i < n - 1; i++)
     {
         for (int j = i + 1; j < n; j++)
         {
-            printf("%d %d\n", a[i], a[j]);
+            if (a[i] + a[j] == x)
+            {
+                flag = 1;
+                printf("YES\n");
+                printf("%d %d", a[i], a[j]);
+            }
+        }
+        if (flag == 0)
+        {
+            printf("NO\n");
         }
     }
     return 0;
